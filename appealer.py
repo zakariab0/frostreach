@@ -5,9 +5,9 @@ from email.mime.application import MIMEApplication
 import smtplib
 
 
-# from_email = "cabinetfaska@gmail.com"
-# password = "obrdkmkjclhgsixh"
-# to_email = "zakariabounouu@gmail.com"
+# from_email = ""
+# password = ""
+# to_email = ""
 
 class RH:
     def __init__(self, full_name, email, company_name):
