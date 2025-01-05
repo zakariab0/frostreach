@@ -29,14 +29,15 @@ def generate():
 
     if platform == 'email':
         # Generate email content
-        email_content = ew.generate_email_content(company_name, recruiter_full_name, recruiter_email, personal_text, profession, language)
+        email_content = ew.generate_email_content(company_name, recruiter_full_name, recruiter_email, personal_text, language)
         return jsonify({"status": "success", "message": "Email content generated!", "content": email_content})
     elif platform == 'linkedin':
         # Generate LinkedIn message
-        linkedin_message = ew.generate_linkedin_message(company_name, recruiter_full_name, personal_text, profession, language)
+        linkedin_message = ew.generate_linkedin_message(company_name, recruiter_full_name, personal_text, language)
         return jsonify({"status": "success", "message": "LinkedIn message generated!", "content": linkedin_message})
     else:
         return jsonify({"status": "error", "message": "Invalid platform selected."})
-    
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Use PORT provided by Vercel
+    app.run(host='0.0.0.0', port=port)
