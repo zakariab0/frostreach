@@ -1,35 +1,119 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-h1 {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.container {
+    display: flex;
+    height: 100vh;
 }
 
-#form-container {
+/* Left Column: Input Form */
+.left-column {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    font-family: "Playwrite AU SA", serif;
+}
+
+.left-column h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.left-column h2 {
+    font-size: 18px;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-label {
+.left-column label {
     display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.left-column input,
+.left-column select,
+.left-column button {
+    width: 100%;
+    padding: 8px 3px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.left-column button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 12px;
+}
+
+.left-column button:hover {
+    background-color: #0056b3;
+}
+
+/* Blue Dividing Lines */
+.left-column hr.divider {
+    border: 0;
+    height: 1px;
+    background: #007bff;  /* Blue color */
+    margin: 20px 0;  /* Spacing above and below the line */
+}
+
+/* Right Column: Result Display */
+.right-column {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    font-family: "Playwrite AU SA", serif;
+
+}
+
+.right-column h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.result-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 80vh;
     margin-top: 10px;
 }
 
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;  /* Stack columns vertically */
+        height: auto;  /* Allow container to grow with content */
+    }
 
-#result {
-    margin-top: 20px;
-    white-space: pre-wrap; /* Preserve line breaks in the result */
+    .left-column {
+        border-right: none;  /* Remove the right border */
+        border-bottom: 1px solid #ddd;  /* Add a bottom border */
+        font-family: "Playwrite AU SA", serif;
+    }
+
+    .right-column {
+        max-height: 50vh;  /* Limit the height of the result box on mobile */  
+        font-family: "Playwrite AU SA", serif;
+
+    }
 }

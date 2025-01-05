@@ -1,30 +1,3 @@
-document.getElementById('email-btn').addEventListener('click', () => {
-    showForm('email');
-});
-
-document.getElementById('linkedin-btn').addEventListener('click', () => {
-    showForm('linkedin');
-});
-
-function showForm(platform) {
-    const formContainer = document.getElementById('form-container');
-    const emailField = document.getElementById('email-field');
-    const platformInput = document.getElementById('platform');
-
-    // Show the form
-    formContainer.style.display = 'block';
-
-    // Set the platform value
-    platformInput.value = platform;
-
-    // Show email field only for email platform
-    if (platform === 'email') {
-        emailField.style.display = 'block';
-    } else {
-        emailField.style.display = 'none';
-    }
-}
-
 document.getElementById('generator-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -36,7 +9,7 @@ document.getElementById('generator-form').addEventListener('submit', async (e) =
         company_name: document.getElementById('company_name').value,
         recruiter_email: document.getElementById('recruiter_email').value,
         platform: document.getElementById('platform').value,
-        language: document.getElementById('language').value,  // Add language
+        language: document.getElementById('language').value,
     };
 
     try {
@@ -48,14 +21,19 @@ document.getElementById('generator-form').addEventListener('submit', async (e) =
             body: JSON.stringify(formData),
         });
 
+        // Log the raw response for debugging
+        const rawResponse = await response.text();
+        console.log("Raw Response:", rawResponse);
+
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            const errorData = JSON.parse(rawResponse);  // Parse the raw response
+            throw new Error(errorData.message || `HTTP error! Status: ${response.status}`);
         }
 
-        const result = await response.json();
+        const result = JSON.parse(rawResponse);  // Parse the raw response
         document.getElementById('result').innerText = result.content || result.message;
     } catch (error) {
         console.error('Error:', error);
-        document.getElementById('result').innerText = 'An error occurred. Please try again.';
+        document.getElementById('result').innerText = `An error occurred: ${error.message}`;
     }
 });
