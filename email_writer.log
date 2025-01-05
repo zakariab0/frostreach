@@ -1,0 +1,38 @@
+2025-01-05 20:15:02,562 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 20:15:02,562 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-05 20:15:13,278 - INFO - 127.0.0.1 - - [05/Jan/2025 20:15:13] "GET / HTTP/1.1" 200 -
+2025-01-05 20:15:13,301 - INFO - 127.0.0.1 - - [05/Jan/2025 20:15:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-01-05 20:15:13,323 - INFO - 127.0.0.1 - - [05/Jan/2025 20:15:13] "GET /static/script.js HTTP/1.1" 200 -
+2025-01-05 20:15:21,262 - INFO - Raw Request Data: b'{"user_full_name":"Zakaria Bounou","gender":"Mr","profession":"Software Engineer","recruiter_full_name":"Taha Ganouni","company_name":"Intelcia","recruiter_email":"","platform":"email","language":"english"}'
+2025-01-05 20:15:21,265 - INFO - Extracted Data: {'user_full_name': 'Zakaria Bounou', 'gender': 'Mr', 'profession': 'Software Engineer', 'recruiter_full_name': 'Taha Ganouni', 'company_name': 'Intelcia', 'recruiter_email': '', 'platform': 'email', 'language': 'english'}
+2025-01-05 20:15:22,184 - INFO - Prompt: Can you write a short and personal description for me in english? I am Zakaria Bounou and my profession is Software Engineer.
+2025-01-05 20:15:23,500 - INFO - Generated Content: I'm Zakaria Bounou, a Software Engineer passionate about building innovative and efficient solutions.
+
+2025-01-05 20:15:23,504 - INFO - Prompt: I'm Zakaria Bounou, a Software Engineer passionate about building innovative and efficient solutions.
+, based on my description, can you draft a job application email for opportunities in Software Engineer? Here are the details: company: Intelcia, recruiter's name: Taha Ganouni. The message should be polite, and mention that I am interested in opportunities in Software Engineer. Do not include a subject line, and write the message as if I am sending it directly. IMPORTANT: this mail should be in english.
+2025-01-05 20:15:25,058 - INFO - Generated Content: Dear Mr. Ganouni,
+
+My name is Zakaria Bounou, and I am a Software Engineer with a passion for developing innovative and efficient solutions.  I came across Intelcia and was very impressed by [mention something specific you admire about Intelcia – e.g., its work in a particular area, its company culture, a recent project].
+
+I am writing to express my keen interest in any Software Engineering opportunities that may be available at Intelcia.  I am confident that my skills and experience would be a valuable asset to your team.
+
+Thank you for your time and consideration. I have attached my resume for your review and welcome the opportunity to discuss how my qualifications align with your needs further.
+
+Sincerely,
+
+Zakaria Bounou
+
+2025-01-05 20:15:25,059 - INFO - 127.0.0.1 - - [05/Jan/2025 20:15:25] "POST /generate HTTP/1.1" 200 -
+2025-01-05 20:15:32,566 - INFO - Raw Request Data: b'{"user_full_name":"Zakaria Bounou","gender":"Mr","profession":"Software Engineer","recruiter_full_name":"Taha Ganouni","company_name":"Intelcia","recruiter_email":"","platform":"linkedin","language":"english"}'
+2025-01-05 20:15:32,567 - INFO - Extracted Data: {'user_full_name': 'Zakaria Bounou', 'gender': 'Mr', 'profession': 'Software Engineer', 'recruiter_full_name': 'Taha Ganouni', 'company_name': 'Intelcia', 'recruiter_email': '', 'platform': 'linkedin', 'language': 'english'}
+2025-01-05 20:15:33,284 - INFO - Prompt: Can you write a short and personal description for me in english? I am Zakaria Bounou and my profession is Software Engineer.
+2025-01-05 20:15:33,854 - INFO - Generated Content: I'm Zakaria Bounou, a software engineer passionate about building innovative and efficient solutions.
+
+2025-01-05 20:15:33,854 - INFO - Prompt: I'm Zakaria Bounou, a software engineer passionate about building innovative and efficient solutions.
+, based on my description, can you draft a short and professional message to contact an HR recruiter on LinkedIn? Here are the details: company: Intelcia, recruiter's name: Taha Ganouni. The message should be professional, and mention that I am interested in opportunities in Software Engineer. Do not include a subject line, and write the message as if I am sending it directly. This message should be in english.
+2025-01-05 20:15:34,738 - INFO - Generated Content: Hi Taha,
+
+My name is Zakaria Bounou, and I'm a software engineer with a passion for developing innovative and efficient solutions.  I came across your profile and was impressed by Intelcia's work. I'm interested in exploring Software Engineer opportunities at your company.  Would you be open to a brief conversation?
+
+2025-01-05 20:15:34,739 - INFO - 127.0.0.1 - - [05/Jan/2025 20:15:34] "POST /generate HTTP/1.1" 200 -
