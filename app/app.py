@@ -22,17 +22,18 @@ def generate():
     company_name = data.get('company_name')
     recruiter_email = data.get('recruiter_email', '')  # Optional for LinkedIn
     platform = data.get('platform')  # 'email' or 'linkedin'
+    language = data.get('language')  # 'english', 'french', 'spanish', etc.
 
     # Generate personalized text
-    personal_text = ew.generate_personal_text(gender, user_full_name, profession)
+    personal_text = ew.generate_personal_text(gender, user_full_name, profession, language)
 
     if platform == 'email':
         # Generate email content
-        email_content = ew.generate_email_content(company_name, recruiter_full_name, recruiter_email, personal_text, profession)
+        email_content = ew.generate_email_content(company_name, recruiter_full_name, recruiter_email, personal_text, profession, language)
         return jsonify({"status": "success", "message": "Email content generated!", "content": email_content})
     elif platform == 'linkedin':
         # Generate LinkedIn message
-        linkedin_message = ew.generate_linkedin_message(company_name, recruiter_full_name, personal_text, profession)
+        linkedin_message = ew.generate_linkedin_message(company_name, recruiter_full_name, personal_text, profession, language)
         return jsonify({"status": "success", "message": "LinkedIn message generated!", "content": linkedin_message})
     else:
         return jsonify({"status": "error", "message": "Invalid platform selected."})

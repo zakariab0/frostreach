@@ -36,6 +36,7 @@ document.getElementById('generator-form').addEventListener('submit', async (e) =
         company_name: document.getElementById('company_name').value,
         recruiter_email: document.getElementById('recruiter_email').value,
         platform: document.getElementById('platform').value,
+        language: document.getElementById('language').value,  // Add language
     };
 
     const response = await fetch('/generate', {
