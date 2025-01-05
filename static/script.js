@@ -39,14 +39,23 @@ document.getElementById('generator-form').addEventListener('submit', async (e) =
         language: document.getElementById('language').value,  // Add language
     };
 
-    const response = await fetch('/generate', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    });
+    try {
+        const response = await fetch('/generate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
 
-    const result = await response.json();
-    document.getElementById('result').innerText = result.content || result.message;
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        document.getElementById('result').innerText = result.content || result.message;
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('result').innerText = 'An error occurred. Please try again.';
+    }
 });
