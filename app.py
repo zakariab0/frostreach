@@ -33,11 +33,11 @@ def generate():
 
         if platform == 'email':
             # Generate email content
-            email_content = ew.generate_email_content(company_name, recruiter_full_name, recruiter_email, personal_text, language)
+            email_content = ew.generate_email_content(company_name, recruiter_full_name, recruiter_email, personal_text, profession, language)
             return jsonify({"status": "success", "message": "Email content generated!", "content": email_content})
         elif platform == 'linkedin':
             # Generate LinkedIn message
-            linkedin_message = ew.generate_linkedin_message(company_name, recruiter_full_name, personal_text, language)
+            linkedin_message = ew.generate_linkedin_message(company_name, recruiter_full_name, personal_text, profession, language)
             return jsonify({"status": "success", "message": "LinkedIn message generated!", "content": linkedin_message})
         else:
             return jsonify({"status": "error", "message": "Invalid platform selected"}), 400
