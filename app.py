@@ -1,10 +1,15 @@
-import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
 import email_writer as ew
+import os
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route('/')
+def index():
+    """Render the main page with options for email or LinkedIn."""
+    return render_template('index.html')
 
 @app.route('/generate', methods=['POST'])
 def generate():
