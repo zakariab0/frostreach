@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Outreach Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Cold Outreach Generator</h1>
+    <p>Choose your platform:</p>
+    <button id="email-btn">Write an Email</button>
+    <button id="linkedin-btn">Write a LinkedIn Message</button>
+
+    <div id="form-container" style="display: none;">
+        <form id="generator-form">
+            <!-- User's Personal Details -->
+            <h2>Your Details</h2>
+            <label for="user_full_name">Your Full Name:</label>
+            <input type="text" id="user_full_name" name="user_full_name" required><br>
+
+            <label for="gender">Your Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="monsieur">Monsieur</option>
+                <option value="madame">Madame</option>
+            </select><br>
+
+            <label for="profession">Your Profession:</label>
+            <input type="text" id="profession" name="profession" required><br>
+
+            <!-- Language Selection -->
+            <label for="language">Language:</label>
+            <select id="language" name="language" required>
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="spanish">Spanish</option>
+                <option value="german">German</option>
+            </select><br>
+
+            <!-- Recruiter's Details -->
+            <h2>Recruiter's Details</h2>
+            <label for="recruiter_full_name">Recruiter's Full Name:</label>
+            <input type="text" id="recruiter_full_name" name="recruiter_full_name" required><br>
+
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required><br>
+
+            <!-- Email Field (Only for Email Platform) -->
+            <div id="email-field" style="display: none;">
+                <label for="recruiter_email">Recruiter's Email:</label>
+                <input type="email" id="recruiter_email" name="recruiter_email"><br>
+            </div>
+
+            <!-- Hidden Platform Input -->
+            <input type="hidden" id="platform" name="platform" value="">
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

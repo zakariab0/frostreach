@@ -4,7 +4,6 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import smtplib
 
-
 # from_email = ""
 # password = ""
 # to_email = ""
