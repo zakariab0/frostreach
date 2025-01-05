@@ -1,4 +1,4 @@
-# Applier - Personalized Job Application Generator
+# Frostreach - Personalized Job Application Generator
 
 Applier is a web application designed to help users create personalized job application emails and LinkedIn messages. It uses advanced AI (Google Gemini API) to generate tailored content based on user inputs, such as their name, profession, and the recruiter's details. The application also saves recruiter information to a PostgreSQL database for future reference.
 
