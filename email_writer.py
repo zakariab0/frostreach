@@ -7,11 +7,11 @@ import os
 # Load environment variables from .env
 load_dotenv()
 
-# Configure logging
+# Configure logging to output to the console (stdout) instead of a file
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='email_writer.log'  # Log to a file
+    handlers=[logging.StreamHandler()]  # Log to stdout
 )
 
 # Configure Google Generative AI
